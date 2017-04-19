@@ -152,7 +152,7 @@ bootstrap() {
     docker run $user_args --rm -it --name seafile-bootstrap -e SEAFILE_BOOTSRAP=1 $envs $volumes $ports $image /sbin/my_init $quiet -- /scripts/bootstrap.py
 
     loginfo "Now building the local docker image."
-    docker build -f bootstrap/generated/Dockerfile -t local_seafile/server:latest  . >/dev/null
+    docker build -f bootstrap/generated/Dockerfile -t local_seafile/server:latest  .
     loginfo "Image built."
 }
 
