@@ -8,7 +8,7 @@ if [[ ! -d /var/lib/mysql/mysql ]]; then
 
     chown -R mysql.mysql /var/lib/mysql
 
-    mysql_install_db >/var/log/mysql-bootstrap.log 2>&1
+    mysqld --initialize >/var/log/mysql-bootstrap.log 2>&1
     # TODO: print the log if mysql_install_db fails
 
     rm -rf /var/run/mysqld/*
