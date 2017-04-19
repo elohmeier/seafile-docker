@@ -12,6 +12,7 @@ if [[ ! -d /var/lib/mysql/mysql ]]; then
     # TODO: print the log if mysql_install_db fails
 
     rm -rf /var/run/mysqld/*
+    mkdir /var/run/mysqld
 
     echo 'Starting mysqld'
     mysqld_safe >>/var/log/mysql-bootstrap.log 2>&1 &
