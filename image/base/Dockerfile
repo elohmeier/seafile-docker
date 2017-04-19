@@ -1,13 +1,13 @@
 # Lastet phusion baseimage as of 2016.11, based on ubuntu 16.04
 # See https://hub.docker.com/r/phusion/baseimage/tags/
-FROM phusion/baseimage:0.9.19
+FROM phusion/baseimage:0.9.21
 
 ENV UPDATED_AT=20161124 \
     DEBIAN_FRONTEND=noninteractive
 
 CMD ["/sbin/my_init", "--", "bash", "-l"]
 
-RUN apt-get update -qq && apt-get -qq -y install memcached mariadb-server nginx
+RUN apt-get update -qq && apt-get -qq -y install memcached mysql-server nginx
 
 # Utility tools
 RUN apt-get install -qq -y vim htop net-tools psmisc git wget curl
